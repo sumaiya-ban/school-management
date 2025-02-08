@@ -4,42 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp3
+namespace collegemanegement
 {
-   public class student
+    internal class Program
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
-        public string Course { get; set; }
-        
-       public student(int id,string name,string course)
-        { ID= id; Name = name; Course = course; }
-        
-        public static void DisplayStudentByID(student[] students,int searchID)
+        static void Main(string[] args)
         {
-            foreach(student student in students)
-            {
-                if(student.ID==searchID)
-                {
-                    Console.WriteLine($"ID:{student.ID},Name:{student.Name},Course:{student.Course}");
-                    return;
-                }
-            }
-            Console.WriteLine("student not found.");
-        }
-
-        public static void Main(string[] args)
-        {
-            student[] students = new student[]
-            {
- new student(1,"sumaiya","phycis"),
-                 new student(2,"rabeya","phycis"),
-                  new student(3,"khadiza","phycis")
-            };
+            Student_teacher[] Student_teachers = new Student_teacher[]
+           {
+ new Student_teacher(1,"sumaiya","phycis"),
+                 new Student_teacher(2,"rabeya","phycis"),
+                  new Student_teacher(3,"khadiza","phycis")
+           };
             Console.WriteLine("enter students id:");
             int searchID = int.Parse(Console.ReadLine());
-            DisplayStudentByID(students, searchID);
-            
+            DisplayStudentByID(Student_teachers, searchID);
         }
     }
 }
